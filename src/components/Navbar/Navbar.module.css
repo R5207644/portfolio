@@ -1,0 +1,81 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: rgba(10, 10, 10, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Mobile First: Default state is the mobile menu */
+.navLinks {
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--bg-color);
+    text-align: center;
+    transition: 0.3s ease;
+    padding: 2rem 0;
+    display: flex;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.navLinks.active {
+    left: 0;
+}
+
+.navLinks li a {
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.navLinks li a:hover {
+    color: var(--accent-color);
+}
+
+.menuIcon {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+    .navbar {
+        padding: 1rem 2rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .navLinks {
+        position: static;
+        flex-direction: row;
+        width: auto;
+        background-color: transparent;
+        padding: 0;
+        border-bottom: none;
+        gap: 2rem;
+    }
+
+    .navLinks li a {
+        font-size: 1rem;
+    }
+
+    .menuIcon {
+        display: none;
+    }
+}

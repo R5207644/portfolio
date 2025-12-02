@@ -1,0 +1,136 @@
+.hero {
+    height: 100vh;
+    background: linear-gradient(-45deg, #0a0a0a, #1f1f1f, #001f3f, #0a0a0a);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+/* Mobile First Typography */
+.name {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+    background: linear-gradient(to right, #fff, var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+/* Mobile First Buttons (Column) */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.btnPrimary,
+.btnSecondary {
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    /* Full width on mobile */
+    text-align: center;
+}
+
+.btnPrimary {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.btnPrimary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+}
+
+.btnSecondary {
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.btnSecondary:hover {
+    background-color: rgba(0, 212, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+    .name {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .buttons {
+        flex-direction: row;
+        max-width: none;
+    }
+
+    .btnPrimary,
+    .btnSecondary {
+        width: auto;
+    }
+}

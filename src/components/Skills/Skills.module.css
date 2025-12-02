@@ -1,0 +1,82 @@
+.skills {
+    padding: 3rem 1rem;
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+
+.heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #333;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
+    border-color: var(--accent-color);
+}
+
+.icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-color);
+}
+
+.card:hover .icon {
+    color: var(--accent-color);
+}
+
+.name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+    .skills {
+        padding: 5rem 2rem;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 2rem;
+    }
+
+    .card {
+        padding: 2rem;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+    }
+
+    .icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .name {
+        font-size: 1.2rem;
+    }
+}
